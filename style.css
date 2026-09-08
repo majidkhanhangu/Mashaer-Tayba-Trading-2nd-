@@ -575,6 +575,41 @@ h1, h2, h3 {
     inset: 0;
     background: linear-gradient(to top, rgba(20,10,4,0.6) 0%, transparent 55%);
 }
+/* ===== TRUST / STATS ===== */
+.trust-strip {
+    padding: 70px 0;
+    background: var(--dark);
+    color: var(--text-on-dark);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.trust-item {
+    text-align: center;
+    border-right: 1px solid var(--border-dark);
+    padding: 0 12px;
+}
+
+.trust-item:last-child { border-right: none; }
+
+.trust-num {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--gold-soft);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.trust-label {
+    font-size: 0.85rem;
+    color: var(--text-on-dark-muted);
+    letter-spacing: 0.02em;
+}
 
 /* ===== CONTACT / FOOTER CTA ===== */
 .contact-cta {
@@ -698,4 +733,6 @@ h1, h2, h3 {
     .section-head { flex-direction: column; align-items: flex-start; }
     .swatch-palette { grid-template-columns: repeat(5, 1fr); gap: 8px; }
     .mixing-station { padding: 22px; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+    .trust-item:nth-child(2) { border-right: none; }
 }

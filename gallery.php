@@ -75,6 +75,30 @@ $gallery_textures = ['tex-1', 'tex-2', 'tex-3', 'tex-4', 'tex-5', 'tex-6'];
     </div>
 </section>
 
+<!-- ===== TRUST / STATS ===== -->
+<section class="trust-strip">
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-num">10+</div>
+                <div class="trust-label">Years of Craft</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">500+</div>
+                <div class="trust-label">Rooms &amp; Facades Finished</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">100%</div>
+                <div class="trust-label">On-Site Colour Match</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num">2 Yr</div>
+                <div class="trust-label">Workmanship Guarantee</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== CTA ===== -->
 <section class="contact-cta" id="contact">
     <div class="container">
