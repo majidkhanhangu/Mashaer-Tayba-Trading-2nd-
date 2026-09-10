@@ -17,7 +17,17 @@ $gallery = [];
 $gallery_result = mysqli_query($conn, "SELECT * FROM gallery ORDER BY id ASC");
 while ($row = mysqli_fetch_assoc($gallery_result)) {
     $gallery[] = $row;
+}
 
+/* ---------------------------------------------
+   Fetch paints (for the price slider)
+   --------------------------------------------- */
+$paints = [];
+$paints_result = mysqli_query($conn, "SELECT * FROM paints ORDER BY id ASC");
+if ($paints_result) {
+    while ($row = mysqli_fetch_assoc($paints_result)) {
+        $paints[] = $row;
+    }
 }
 
 // Service icons (simple inline SVGs, one per service)
@@ -161,6 +171,42 @@ $gallery_textures = ['tex-1', 'tex-2', 'tex-3', 'tex-4', 'tex-5', 'tex-6'];
     </div>
 </section>
 
+<!-- ===== PAINT TYPES SLIDER ===== -->
+<?php if (!empty($paints)): ?>
+<section class="paint-slider-section">
+    <div class="container">
+        <div class="section-head">
+            <h2>Paint types &amp; pricing</h2>
+            <p>A starting guide to what we stock — final pricing depends on surface area and finish.</p>
+        </div>
+    </div>
+
+    <div class="paint-slider">
+        <button class="slider-btn slider-prev" id="paintPrev" aria-label="Previous">&larr;</button>
+        <div class="paint-track" id="paintTrack">
+            <?php foreach ($paints as $paint): ?>
+            <?php
+                $paint_img_path = 'images/paints/' . ($paint['image_url'] ?? '');
+                $paint_has_image = !empty($paint['image_url']) && file_exists(__DIR__ . '/' . $paint_img_path);
+            ?>
+            <div class="paint-card">
+                <div class="paint-swatch"
+                     style="<?= $paint_has_image
+                        ? "background-image:url('" . htmlspecialchars($paint_img_path) . "'); background-size:cover; background-position:center;"
+                        : "background:" . htmlspecialchars($paint['color_hex']) . ";" ?>"></div>
+                <div class="paint-info">
+                    <div class="paint-category"><?= htmlspecialchars($paint['category']) ?></div>
+                    <div class="paint-name"><?= htmlspecialchars($paint['name']) ?></div>
+                    <div class="paint-price">SAR <?= number_format((float)$paint['price'], 2) ?></div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <button class="slider-btn slider-next" id="paintNext" aria-label="Next">&rarr;</button>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- ===== CONTACT / FOOTER CTA ===== -->
 <section class="contact-cta" id="contact">
     <div class="container">
@@ -187,6 +233,18 @@ $gallery_textures = ['tex-1', 'tex-2', 'tex-3', 'tex-4', 'tex-5', 'tex-6'];
 document.getElementById('navToggle').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('show');
 });
+
+// Paint types slider — scrolls the track left/right by one card width
+const paintTrack = document.getElementById('paintTrack');
+if (paintTrack) {
+    const scrollAmount = () => paintTrack.querySelector('.paint-card').offsetWidth + 20;
+    document.getElementById('paintNext').addEventListener('click', () => {
+        paintTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+    document.getElementById('paintPrev').addEventListener('click', () => {
+        paintTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+}
 </script>
 
 </body>
