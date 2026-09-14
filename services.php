@@ -74,7 +74,7 @@ $service_icons = [
     </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- ===== CONTACT AND FOOTER JOINT SECTION ===== -->
 <section class="contact-cta" id="contact">
     <div class="container">
         <div class="contact-top" style="border-bottom:none; padding-bottom:0;">

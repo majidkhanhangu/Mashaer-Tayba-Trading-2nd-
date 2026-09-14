@@ -1,5 +1,5 @@
 /* === MASHAER TAYEBAH — PAINT & SHOWROOM
-   Stylesheet — warm terracotta palette==== */
+      STYLESHEEET ==== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -368,7 +368,7 @@ h1, h2, h3 {
     stroke-width: 1.8px;
 }
 
-/* Hover Par Icon Background Fill Effect */
+/* HOVER ICON BACKGROUND FILL EFFECT */
 .service-card:hover .service-icon {
     background: var(--gold-hover);
     color: #ffffff;
@@ -386,7 +386,7 @@ h1, h2, h3 {
     line-height: 1.5;
 }
 
-/* Mobile Responsiveness (Screen size < 992px) */
+/* MOBILE RESPONSIVENESS (Screen size < 992px) */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -502,7 +502,7 @@ h1, h2, h3 {
     border: 1px solid var(--border-light);
 }
 
-/* Background gradient overlays par text ko readable banane ke liye overlay add kiya hai */
+/* BACKGROUND GRADIENT OVERLAYS USING FOR READBLE OVERLAYS FOR TEXT */
 .gallery-item::before {
     content: '';
     position: absolute;
@@ -513,7 +513,7 @@ h1, h2, h3 {
 
 .gallery-item .item-info {
     position: relative;
-    z-index: 2; /* Text ko gradient overlay ke oopar rakhega */
+    z-index: 2; /* THE TEXT GRADIENT OVERLAY ON TOP FIXED */
     color: #ffffff !important;
     width: 100%;
 }
@@ -560,7 +560,7 @@ h1, h2, h3 {
     transform: scale(1.08);
 }
 
-/* Distinct generated backgrounds per gallery item — no external images needed */
+/* Distinct generated backgrounds ON gallery item — no external images needed */
 .tex-1 { background: linear-gradient(135deg, #D9713C 0%, #A9552E 100%); }
 .tex-2 { background: linear-gradient(135deg, #3A2418 0%, #2B1B12 100%); }
 .tex-3 { background: linear-gradient(135deg, #B85A2A 0%, #5C2E16 100%); }

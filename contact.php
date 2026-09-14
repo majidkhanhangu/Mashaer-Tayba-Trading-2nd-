@@ -2,7 +2,7 @@
 require_once 'db.php';
 
 /* ---------------------------------------------
-   Handle contact form submission (POST)
+   HANDLE CONTACT FORM SUBMISSION (POST)
    --------------------------------------------- */
 $form_success = false;
 $form_error = '';
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_inquiry'])) {
 }
 
 /* ---------------------------------------------
-   Handle product order submission (POST)
+   HANDLE PRODUCT ORDER SUBMISSION (POST)
    --------------------------------------------- */
 $order_success = false;
 $order_error = '';
